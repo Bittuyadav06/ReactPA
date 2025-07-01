@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
+import Index from '../Index';
 
 
 export default function Login() {
@@ -25,14 +27,13 @@ export default function Login() {
         //     setMessage("Login failed! : Server Error");
 
         // }
-        const handleLogin = async (e) => {
-  e.preventDefault();
+        
   if (username === "admin" && password === "123") {
     setMessage("Login successful! (fake token: abc123)");
   } else {
     setMessage("Login failed: Invalid credentials");
   }
-};
+
 
     };
 
@@ -60,7 +61,7 @@ export default function Login() {
                             />
                         </div>
                         <div className=' py-2  w-3/5 flex justify-between  '>
-                            <button className='bg-blue-300 rounded-md pl-2 pr-2  hover:text-white  ' type='submit' onClick={handleLogin} >Login</button>
+                            <button className='bg-blue-300 rounded-md pl-2 pr-2  hover:text-white  ' type='submit' onClick={handleLogin} ><Link to="/Index" >Login </Link></button>
                             <button className='bg-blue-300 rounded-md pl-2 pr-2  hover:text-white  ' >logout</button>
                         </div>
                         {message && <p style={{marginTop:"10px"}}>{message}</p>}
