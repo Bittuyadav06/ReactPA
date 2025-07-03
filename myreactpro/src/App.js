@@ -6,6 +6,7 @@ import Login from './components/LogInOut/Login';
 import Index from './components/Index';
 import Home from './components/Home';
 import About from './components/About';
+import Navbar from './components/Navbar';
 
 
 function App() {
@@ -13,8 +14,10 @@ function App() {
   // console.log(user);
   return (
     <div className="App">
+      <Navbar/>
       <Routes>
         <Route path='/' element={<Login/>}/>
+        <Route path='/navbar' element={<Navbar/>}/>
         <Route path='/index' element={<Index/>}/>
         <Route path='/home' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
