@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Home from './Home'
-import About from './About';
+
+import About from './About'
 
 
 export default function Index() {
@@ -24,6 +25,7 @@ export default function Index() {
             </header>
               <Home/>
               <About/>
+              
         </div>
     )
 }
