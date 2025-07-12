@@ -1,6 +1,6 @@
 import React from 'react'
 import image1 from '../Images/image1.jpg'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 
 const About = () => {
   return (
