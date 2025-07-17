@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import Index from '../Index.jsx';
 
 
-export default function Login() {
+export default function Login({ isOpen }) {
+   
+
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
@@ -36,6 +38,7 @@ export default function Login() {
 
 
     };
+    if (!isOpen) return null;
 
     return (
         <>

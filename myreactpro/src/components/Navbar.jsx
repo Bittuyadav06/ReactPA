@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Home from './Home'
 
 export default function Navbar() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div>
         <header className='p-3 bg-blue-400 w-full'>
@@ -13,7 +14,7 @@ export default function Navbar() {
                             <Link to="/about"><li className='hover:text-white'>about</li> </Link>
                         </ul>
                         <ul className='flex gap-2 font-bold text-gray-700'>
-                            <Link to="/"><li className='hover:text-white'>login</li></Link>
+                            <Link to="/"><li className='hover:text-white'onClick={() => setIsModalOpen(true)} >login</li></Link>
                             <li className='hover:text-white'>singup</li>
                         </ul>
                     </div>
