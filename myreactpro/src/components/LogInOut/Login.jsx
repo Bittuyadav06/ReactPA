@@ -1,15 +1,18 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import {ImAccessiblity} from 'react-icons'
+import { Link, useNavigate } from 'react-router-dom';
 import Index from '../Index.jsx';
+import { useAuth } from '../../context/authContext.js';
 
 
-export default function Login({ isOpen }) {
+export default function Login() {
    
-
+    const {Login} = useAuth();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -35,18 +38,18 @@ export default function Login({ isOpen }) {
   } else {
     setMessage("Login failed: Invalid credentials");
   }
-
+navigate("/home")
 
     };
-    if (!isOpen) return null;
+   
 
     return (
         <>
             <div>
-                <div className="w-screen justify-items-center py-4">
-                    <div className='from  md:w-[25%] mt-4 border rounded-md bg-blue-200 justify-items-center '
+                <div className="w-screen justify-items-center  py-4  bg-gray-300 h-screen content-center">
+                    <div className='from  md:w-[40%] md:h-[50%] mt-4 border rounded-md bg-blue-200 place-content-center justify-items-center  '
                         onSubmit={handleLogin}>
-                        <p className='font-bold text-blue-700'>Login</p>
+                        <p className='font-bold text-blue-700'> Login</p>
                         <div className='text-left'>
                             <label htmlFor="username" className='w-full text-left'>username</label>
                             <input className='w-full' 
