@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import Index from '../Index.jsx';
 import { useAuth } from '../../context/authContext.js';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {FaUser} from 'react-icons/fa'
 
 
 export default function Login() {
@@ -49,7 +49,7 @@ export default function Login() {
                 <div className="w-screen justify-items-center  py-4  bg-black bg-opacity-30 h-screen content-center">
                     <div className='from  md:w-[40%] lg:w-[40%]  md:h-[50%] mt-4 border rounded-md bg-blue-200 place-content-center justify-items-center  '
                         onSubmit={handleLogin}>
-                        <p className='font-bold text-blue-700'>  Login</p>
+                        <p className='font-bold text-blue-700'> <FaUser /> Login</p>
                         <div className='text-left'>
                             <label htmlFor="username" className='w-full text-left'>username</label>
                             <input className='w-full'
